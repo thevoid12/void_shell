@@ -16,9 +16,8 @@ int main() {
 
         // Remove newline character
         command[strcspn(command, "\n")] = 0;
-
-        if (strcmp(command, "exit") == 0) {
-            break; // Exit the shell
+        if (strcmp(command, "exit") == 0 || strcmp(command, ".exit") == 0 || strcmp(command, "quit") == 0 || strcmp(command, ".quit") == 0){
+            execute_exit();        
         } else if (strcmp(command, "ls") == 0) {
             execute_ls();
         } else if (strcmp(command, "pwd") == 0) {
@@ -27,6 +26,6 @@ int main() {
             printf("Command not found: %s\n", command);
         }
     }
-
+  
     return 0;
 }
