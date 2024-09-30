@@ -11,7 +11,7 @@ SRC_DIR = src
 TARGET = void_shell
 
 # Source files
-SRCS = $(SRC_DIR)/main.c $(SRC_DIR)/execute_ls.c $(SRC_DIR)/execute_pwd.c $(SRC_DIR)/execute_cd.c $(SRC_DIR)/execute_exit.c
+SRCS = $(SRC_DIR)/main.c $(SRC_DIR)/execute_ls.c $(SRC_DIR)/execute_pwd.c $(SRC_DIR)/execute_cd.c $(SRC_DIR)/execute_exit.c $(SRC_DIR)/execute_touch.c
 
 # Object files (for each source file)
 OBJS = $(SRCS:.c=.o)

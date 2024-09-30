@@ -41,7 +41,11 @@ int main() {
         // Handle "pwd" command
         else if (strcmp(command, "pwd") == 0) {
             execute_pwd();
-        } 
+        }else if (strncmp(command,"touch",5) ==0){
+         // Skip "touch " (5 characters + 1 space) to get the filename
+            char *filename = command + 6;  
+            execute_touch(filename);
+        }
         // Unrecognized commands
         else {
             printf("Command not found: %s\n", command);
