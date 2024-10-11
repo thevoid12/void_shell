@@ -61,8 +61,20 @@ int main() {
         } else {
             execute_echo(args);
         }
+        }else if (strcmp(command, "psinfo") == 0) {// Handle "psinfo" command
+            execute_psinfo();
+        } else if (strncmp(command, "remaindme", 8) == 0) {
+            int time;
+            char *time_str = strtok(command + 9, " "); // Get the time (next token)
+            char *message = strtok(NULL, ""); // Get the rest of the string as the message
+            
+            if (time_str && message) {
+                time = atoi(time_str);
+                execute_remindme(time, message);
+            } else {
+                printf("Usage: remaindme [time] [message]\n");
+            }
         }
-
         // Unrecognized commands
         else {
             printf("Command not found: %s\n", command);
