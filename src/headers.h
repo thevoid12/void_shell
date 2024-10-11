@@ -5,6 +5,8 @@ void execute_ls(char *flags);
 void execute_pwd();
 void execute_cd(char *dir);
 void execute_touch(char *dir);
+void execute_cat(char *dir);
+void execute_echo(char *args);
 void execute_exit();
 
 

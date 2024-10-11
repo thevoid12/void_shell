@@ -45,7 +45,24 @@ int main() {
          // Skip "touch " (5 characters + 1 space) to get the filename
             char *filename = command + 6;  
             execute_touch(filename);
+        }else if (strncmp(command, "cat", 3) == 0) {
+          // Skip "cat " (3 characters + 1 space) to get the filename
+          char *filename = command + 4;  
+          if (*filename == '\0') {
+              printf("cat: missing file operand\n");  // Handle missing filename
+          } else {
+              execute_cat(filename);
+          }
+        }else if (strncmp(command, "echo", 4) == 0) {
+        // Skip "echo " (4 characters) to get the arguments
+        char *args = command + 5; 
+        if (*args == '\0') {
+            printf("\n");  // Print a new line if no arguments are passed
+        } else {
+            execute_echo(args);
         }
+        }
+
         // Unrecognized commands
         else {
             printf("Command not found: %s\n", command);
